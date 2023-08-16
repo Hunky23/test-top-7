@@ -1,0 +1,36 @@
+.price {
+  background: #ededed;
+
+  &__wrapper {
+    overflow: hidden;
+  }
+
+  &__inner {
+    margin: -15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
+  }
+
+  &__card {
+    width: 25%;
+  }
+
+  @media (max-width: 991px) {
+    &__card {
+      width: 33.333%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__card {
+      width: 50%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    &__card {
+      width: 100%;
+    }
+  }
+}

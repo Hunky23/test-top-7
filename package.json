@@ -1,0 +1,28 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "@babel/core": "latest",
+    "@babel/preset-env": "latest",
+    "del": "latest",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-babel": "latest",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-fonter": "latest",
+    "gulp-livereload": "latest",
+    "gulp-minify": "^3.1.0",
+    "gulp-plumber": "latest",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "latest",
+    "gulp-ttf2woff2": "latest",
+    "sass": "latest"
+  },
+  "browserslist": [
+    "last 4 versions"
+  ],
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "global": "^4.4.0",
+    "npm": "^9.8.1"
+  }
+}

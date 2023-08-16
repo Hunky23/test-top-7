@@ -1,0 +1,147 @@
+.header {
+  background: #000;
+
+  &__container {
+    height: 100px;
+    align-items: center;
+    display: flex;
+  }
+
+  &__logo-wrapper {
+    margin-right: auto;
+  }
+
+  &__menu-open-btn {
+    align-items: center;
+    display: none;
+
+    svg {
+      margin-right: 7px;
+      width: 30px;
+      height: 30px;
+      fill: #fff;
+    }
+
+    span {
+      color: #fff;
+      font-size: 24px;
+      font-weight: 700;
+    }
+  }
+
+  &__menu-wrapper {
+    height: 100%;
+    position: relative;
+  }
+
+  &__menu-close-btn {
+    top: 15px;
+    right: 15px;
+    position: absolute;
+    display: none;
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__menu {
+    height: 100%;
+  }
+
+  &__menu-list {
+    height: 100%;
+    display: flex;
+
+    .menu-item {
+      &.current-menu-item {
+        a {
+          &:before {
+            left: 0;
+            width: 100%;
+            background: #b88b58;
+          }
+        }
+      }
+
+      a {
+        padding: 0 12px;
+        height: 100%;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        display: flex;
+
+        &:before {
+          left: 50%;
+          bottom: 0;
+          content: '';
+          width: 0;
+          height: 6px;
+          position: absolute;
+          display: block;
+          transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        }
+
+        &:hover {
+          &:before {
+            left: 0;
+            width: 100%;
+            background: #aeaeae;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    &__menu-open-btn {
+      display: flex;
+    }
+
+    &__menu-close-btn {
+      display: block;
+    }
+
+    &__menu-wrapper {
+      right: 0;
+      top: 0;
+      width: 50%;
+      min-width: 320px;
+      height: 100%;
+      position: fixed;
+      background: #fff;
+      transform: translateX(100%);
+      transition: transform .3s;
+      z-index: 1;
+
+      &.active {
+        transform: translateX(0);
+      }
+    }
+
+    &__menu-list {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .menu-item {
+        height: unset;
+
+        &:not(:last-child) {
+          margin-bottom: 5px;
+        }
+
+        a {
+          padding: 15px 15px;
+          color: #000;
+        }
+      }
+    }
+  }
+}

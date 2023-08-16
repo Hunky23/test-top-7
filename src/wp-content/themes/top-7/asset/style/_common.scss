@@ -1,0 +1,84 @@
+@import '_vars';
+
+html {
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.2;
+  scroll-behavior: smooth;
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 30px;
+  max-width: 1170px;
+}
+
+.btn {
+  padding: 15px 50px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+  background: #b88b58;
+  border-radius: 30px;
+  transition: background .3s;
+
+  &:hover {
+    background: #000;
+  }
+}
+
+.page-overlay {
+  cursor: pointer;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: fixed;
+  background: #000;
+  transition: opacity .3s;
+
+  &.active {
+    width: 100%;
+    height: 100%;
+    opacity: .50;
+  }
+}
+
+.section {
+  &__container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  &__title {
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__subtitle {
+    color: #aeaeae;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+}
