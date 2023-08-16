@@ -8,9 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
             if (t7_open_header_menu_modal()) {
                 t7_open_overlay();
             }
-        });
+        }, 2);
     }
-
 
     //Закрыть модальное окно с меню в шапке
     const headerMenuCloseBtn = document.querySelector('.js-header-menu-close-btn');
@@ -24,18 +23,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
     document.addEventListener('click', function (event) {
-        const headerMenuOpenBtn = document.querySelector('.js-header-menu-open-btn');
         const headerMenuBody = document.querySelector('.js-header-menu-body');
         if (
-            headerMenuOpenBtn && headerMenuBody
-            && !headerMenuOpenBtn.contains(event.target)
+            headerMenuBody
             && !headerMenuBody.contains(event.target)
         ) {
             if (t7_close_header_menu_modal()) {
                 t7_close_overlay();
             }
         }
-    });
+    }, 1);
     document.addEventListener('keyup', function (event) {
         if (event.key === 'Escape') {
             if (t7_close_header_menu_modal()) {
@@ -74,24 +71,23 @@ document.addEventListener("DOMContentLoaded", function () {
                     t7_open_overlay();
                 }
             });
-        });
+        }, 2);
     }
 
 
     //Закрыть модальное окно заказать звонок
     document.addEventListener('click', function (event) {
-        const requestCallOpenBtn = document.querySelector('.js-request-call-open-btn');
         const requestCallBody = document.querySelector('.js-request-call-body');
         if (
-            requestCallOpenBtn && requestCallBody
-            && !requestCallOpenBtn.contains(event.target)
+            requestCallBody
             && !requestCallBody.contains(event.target)
         ) {
+
             if (t7_close_request_call_modal()) {
                 t7_close_overlay();
             }
         }
-    });
+    }, 1);
     document.addEventListener('keyup', function (event) {
         if (event.key === 'Escape') {
             if (t7_close_request_call_modal()) {
@@ -112,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+
 //Открыть оверлей страницы
 function t7_open_overlay() {
     const body = document.querySelector('body');
@@ -129,6 +126,7 @@ function t7_open_overlay() {
 
     return false;
 }
+
 
 //Закрыть оверлей страницы
 function t7_close_overlay() {
@@ -148,6 +146,7 @@ function t7_close_overlay() {
     return false;
 }
 
+
 //Открыть модальное окно с меню в шапке
 function t7_open_header_menu_modal() {
     const headerMenuBody = document.querySelector('.js-header-menu-body');
@@ -164,6 +163,7 @@ function t7_open_header_menu_modal() {
 
     return false;
 }
+
 
 //Закрыть модальное окно с меню в шапке
 function t7_close_header_menu_modal() {
@@ -192,6 +192,7 @@ function t7_open_request_call_modal() {
 
     return false;
 }
+
 
 //Закрыть модальное окно заказать звонок
 function t7_close_request_call_modal() {

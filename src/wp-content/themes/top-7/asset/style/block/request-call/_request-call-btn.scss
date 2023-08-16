@@ -1,0 +1,19 @@
+.request-call-btn {
+  top: 50%;
+  right: 10%;
+  width: 65px;
+  height: 65px;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background: #b88b58;
+  border-radius: 50%;
+
+  svg {
+    width: 30px;
+    height: 30px;
+    stroke: #fff;
+    fill: transparent;
+  }
+}

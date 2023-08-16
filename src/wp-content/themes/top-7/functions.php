@@ -36,9 +36,10 @@ add_action( 'after_setup_theme', 't7_header_menu' );
 add_filter( 'wpcf7_autop_or_not', '__return_false' );
 
 //Подключение модальных окон
-add_action( 'wp_footer', 't7_page_overlay', 5 );
+add_action( 'wp_footer', 't7_page_overlay', 8 );
+add_action( 'wp_footer', 't7_request_call_btn', 5 );
 add_action( 'wp_footer', 't7_request_call' );
-add_action( 'wp_footer', 't7_arrow_to_top' );
+add_action( 'wp_footer', 't7_arrow_to_top', 5 );
 
 //Секции страниц
 add_action( 't7_front_page_section', 't7_hero' );

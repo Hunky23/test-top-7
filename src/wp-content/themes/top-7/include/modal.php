@@ -9,6 +9,19 @@ function t7_page_overlay():void {
 	echo '<div class="page-overlay js-page-overlay"></div>';
 }
 
+
+//Кнопка открытия окна обратной связи
+function t7_request_call_btn():void {
+	?>
+    <a class="request-call-btn js-request-call-open-btn" href="#">
+        <svg>
+            <use xlink:href="#phone_call"></use>
+        </svg>
+    </a>
+	<?php
+}
+
+
 //Модальное окно обратная связь
 function t7_request_call():void {
     ?>
