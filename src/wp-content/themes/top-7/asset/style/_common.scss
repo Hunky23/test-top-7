@@ -35,6 +35,10 @@ html {
   }
 }
 
+#wpadminbar {
+  position: fixed !important;
+}
+
 .page-overlay {
   cursor: pointer;
   left: 0;

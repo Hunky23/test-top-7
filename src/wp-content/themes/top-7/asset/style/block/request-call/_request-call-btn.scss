@@ -7,6 +7,7 @@
   justify-content: center;
   align-items: center;
   display: flex;
+  transform: translateY(-50%);
   background: #b88b58;
   border-radius: 50%;
 
@@ -15,5 +16,21 @@
     height: 30px;
     stroke: #fff;
     fill: transparent;
+  }
+
+  @media (max-width: 1200px) {
+    top: unset;
+    bottom: 20px;
+    transform: unset;
+  }
+
+  @media (max-width: 768px) {
+    width: 45px;
+    height: 45px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
   }
 }
