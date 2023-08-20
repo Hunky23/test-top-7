@@ -7,7 +7,7 @@
 global $post;
 ?>
 
-<section class="section price">
+<section id="section-price" class="section price">
 	<div class="container section__container price__container">
 		<h2 class="section__title price__title">
 			Price (using post ID's)

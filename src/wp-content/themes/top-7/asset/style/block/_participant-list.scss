@@ -1,0 +1,43 @@
+.participant-list {
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      text-align: start;
+      border-top: 1px solid #808080;
+      border-bottom: 1px solid #808080;
+    }
+
+    tbody {
+      tr:not(:last-child) {
+        td {
+          border-bottom: 1px solid #808080;
+        }
+      }
+    }
+
+    td {
+      padding: 5px 0;
+    }
+  }
+
+  &__btn {
+    background: transparent;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      stroke: #db3853;
+      fill: transparent;
+    }
+  }
+}

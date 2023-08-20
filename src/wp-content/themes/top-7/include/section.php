@@ -74,3 +74,38 @@ function t7_price_3():void {
 function t7_contact_us():void {
 	get_template_part( 'template-parts/contact-us' );
 }
+
+
+//Блок Application list
+function t7_application_list():void {
+	$users = file_get_contents( 'https://randomuser.me/api/?results=15' );
+	$errors = array();
+
+	if ( ! empty( $users ) ) {
+		$users = json_decode( $users );
+		$users = $users->results;
+		$users = array_map( function ( $user ) {
+			$result = new stdClass();
+			$result->first_name = $user->name->first;
+			$result->last_name = $user->name->last;
+			$result->email = $user->email;
+			$result->thumbnail = $user->picture->thumbnail;
+
+			return $result;
+		}, $users );
+	} else {
+		$errors[] = 'Failed to get users';
+	}
+
+	get_template_part( 'template-parts/application-list', null, array(
+			'users' => $users,
+			'errors' => $errors
+		)
+	);
+}
+
+
+//Блок Participant list
+function t7_participant_list():void {
+	get_template_part( 'template-parts/participant-list' );
+}

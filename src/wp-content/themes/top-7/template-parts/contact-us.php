@@ -4,7 +4,7 @@
  */
 ?>
 
-<section class="section contact-us">
+<section id="section-contact-us" class="section contact-us">
 	<div class="container section__container contact-us__container">
 		<h2 class="section__title contact-us__title">
 			Contact us

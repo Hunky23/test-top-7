@@ -4,7 +4,7 @@
  */
 ?>
 
-<section class="section about-us">
+<section id="section-about-us" class="section about-us">
 	<div class="container section__container about-us__container">
 		<h2 class="section__title about-us__title">
 			<?php the_field( 'about-us-title' ); ?>

@@ -106,6 +106,34 @@ document.addEventListener("DOMContentLoaded", function () {
             window.scrollTo({top: 0, behavior: 'smooth'});
         });
     }
+
+    //Отправить форму 'Добавить участника'
+    const formsAddParticipant = document.querySelectorAll('.js-add-participant');
+    if (formsAddParticipant) {
+        formsAddParticipant.forEach(function (formAddParticipant) {
+            formAddParticipant.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                t7_add_participant(event.target);
+            });
+        })
+    }
+
+    //Отправить форму 'Удалить участника'
+    const formsDeleteParticipant = document.querySelectorAll('.js-delete-participant');
+    if (formsDeleteParticipant) {
+        formsDeleteParticipant.forEach(function (formAddParticipant) {
+            formAddParticipant.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const formDeleteParticipant = event.target;
+
+                if (t7_delete_participant(formDeleteParticipant)) {
+                    formDeleteParticipant.closest('tr').remove();
+                }
+            });
+        })
+    }
 });
 
 
@@ -209,4 +237,64 @@ function t7_close_request_call_modal() {
     }
 
     return false;
+}
+
+
+//Отправить форму 'Добавить участника'
+async function t7_add_participant(form) {
+    const url = new URL(form.action);
+    url.searchParams.set('action', 'add_participant');
+
+    let formData = new FormData(form);
+    formData = Object.fromEntries(formData);
+
+    const response= await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+    });
+
+    if (response.status === 201) {
+        const data = await response.json();
+
+        alert(data.message);
+    } else if (response.status >= 400 && response.status < 500 ) {
+        const data = await response.json();
+
+        alert(data.message);
+    } else {
+        alert('Server error');
+    }
+}
+
+
+//Отправить форму 'Удалить участника'
+async function t7_delete_participant(form) {
+    const url = new URL(form.action);
+    url.searchParams.set('action', 'delete_participant');
+
+    let formData = new FormData(form);
+    formData = Object.fromEntries(formData);
+
+    const response= await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+    });
+
+    if (response.status === 201) {
+        const data = await response.json();
+
+        return true;
+    } else if (response.status >= 400 && response.status < 500 ) {
+        const data = await response.json();
+
+        alert(data.message);
+
+        return false;
+    } else {
+        alert('Server error');
+
+        return false;
+    }
 }
